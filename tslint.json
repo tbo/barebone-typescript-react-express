@@ -1,0 +1,33 @@
+{
+  "extends": ["tslint:latest", "tslint-react"],
+  "jsRules": {
+    "quotemark": [true, "single", "avoid-escape"],
+    "trailing-comma": false,
+    "no-console": [false],
+    "ordered-imports": false,
+    "trailing-comma": false,
+    "no-bitwise": false,
+    "object-literal-sort-keys": false
+  },
+  "rules": {
+    "ordered-imports": false,
+    "trailing-comma": false,
+    "quotemark": [true, "single"],
+    "curly": true,
+    "jsx-no-multiline-js": false,
+    "jsx-alignment": true,
+    "jsx-no-lambda": true,
+    "jsx-curly-spacing": false,
+    "adjacent-overload-signatures": false,
+    "object-literal-sort-keys": false,
+    "no-bitwise": false,
+    "member-ordering": false,
+    "arrow-parens": false,
+    "jsx-wrap-multiline": false,
+    "jsx-boolean-value": false,
+    "ban-types": [true, ["Object", "Use `object` instead."], ["String", "Use `string` instead"]],
+    "no-unused-variable": [true, "react", {"ignore-pattern": "^_"}],
+    "no-this-assignment": [true, {"allow-destructuring": true}],
+    "no-implicit-dependencies": [true, "dev"]
+  }
+}
