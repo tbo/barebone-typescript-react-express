@@ -5,8 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsc  && (tsc --watch | NODE_ENV=development nodemon server/index.js)",
-    "build": "tsc",
+    "lint": "tslint --project .",
+    "dev": "NODE_ENV=development nodemon --exec 'ts-node' server/index.ts",
+    "build": "tsc && webpack",
     "start": "node server/index.js"
   },
   "repository": {
@@ -30,6 +31,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "ts-loader": "^3.1.1",
+    "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
     "tslint-react": "^3.2.0",
     "typescript": "^2.6.1",

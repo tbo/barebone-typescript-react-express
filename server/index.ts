@@ -1,16 +1,11 @@
 import * as express from 'express';
-import * as webpackMiddleware from 'webpack-dev-middleware';
-import * as webpack from 'webpack';
-
 const app = express();
 
 if (process.env.NODE_ENV === 'development')  {
-  const webpackMiddlewareConfig = {
-    stats: 'errors-only',
-    publicPath: '/'
-  }
-  const webpackCompiler = webpack(require('../webpack.config'));
-  app.use(webpackMiddleware(webpackCompiler, webpackMiddlewareConfig));
+  /* tslint:disable */
+  const webpackCompiler = require('webpack')(require('../webpack.config'));
+  app.use(require('webpack-dev-middleware')(webpackCompiler, {stats: 'errors-only', publicPath: '/'}));
+  /* tslint:enable*/
 }
 
 app.use('/', express.static('public'));
