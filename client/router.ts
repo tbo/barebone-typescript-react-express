@@ -1,5 +1,7 @@
 import createHistory from 'history/createBrowserHistory'
 import Homepage from './pages/home';
+import Echo from './pages/echo';
+import Ajax from './pages/ajax';
 import NotFound from './pages/not-found';
 import {parse} from 'qs';
 import * as UrlPattern from 'url-pattern';
@@ -11,15 +13,16 @@ interface IRouteDefinition {
 }
 
 export interface IRoute extends IRouteDefinition {
-  params: object;
-  query: object;
+  params: {[key: string]: string};
+  query: {[key: string]: string};
 }
 
 const addPattern = item => ({...item, pattern: new UrlPattern(item.path)});
 
 const routes: IRouteDefinition[] = [
   {path: '/', component: Homepage},
-  {path: '/:name', component: Homepage},
+  {path: '/echo/:name', component: Echo},
+  {path: '/ajax', component: Ajax},
   {path: '*', component: NotFound}
 ].map(addPattern);
 
@@ -35,7 +38,6 @@ const getRoute = (location): IRoute => {
 
 history.listen((location) => {
   const route = getRoute(location);
-  console.warn(route);
   listeners.forEach(listener => listener(route));
 })
 

@@ -8,8 +8,9 @@ const Navigation = () => (
   <nav>
     <Nav bsStyle='pills' activeKey={'/'} onSelect={handleSelect}>
       <NavItem eventKey='/'>NavItem 1 content</NavItem>
-      <NavItem eventKey='/test1'>NavItem 2 content</NavItem>
-      <NavItem eventKey='/test2'>NavItem 3 content</NavItem>
+      <NavItem eventKey='/echo/john_doe'>Echo Example</NavItem>
+      <NavItem eventKey='/ajax'>Ajax Example</NavItem>
+      <NavItem eventKey='/invalid'>Invalid link</NavItem>
     </Nav>
   </nav>
 );

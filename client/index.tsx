@@ -23,7 +23,9 @@ class App extends React.Component<{}, {route?: IRoute}> {
       <div style={{paddingLeft: 20, paddingRight: 20}}>
         <Header/>
         <Navigation/>
-        {!!route.component && <route.component/>}
+        <main style={{paddingTop: 20, paddingBottom: 20}}>
+          {!!route.component && <route.component route={route}/>}
+        </main>
       </div>
     );
   }

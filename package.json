@@ -30,6 +30,7 @@
     "@types/react": "^16.0.21",
     "@types/react-bootstrap": "^0.31.7",
     "@types/react-dom": "^16.0.2",
+    "axios": "^0.17.1",
     "history": "^4.7.2",
     "nodemon": "^1.12.1",
     "qs": "^6.5.1",
