@@ -8,6 +8,7 @@ import * as UrlPattern from 'url-pattern';
 
 interface IRouteDefinition {
   path: string;
+  name: string;
   component: any;
   pattern: UrlPattern;
 }
@@ -20,10 +21,10 @@ export interface IRoute extends IRouteDefinition {
 const addPattern = item => ({...item, pattern: new UrlPattern(item.path)});
 
 const routes: IRouteDefinition[] = [
-  {path: '/', component: Homepage},
-  {path: '/echo/:name', component: Echo},
-  {path: '/ajax', component: Ajax},
-  {path: '*', component: NotFound}
+  {path: '/', name: 'homepage', component: Homepage},
+  {path: '/echo/:name', name: 'echo', component: Echo},
+  {path: '/ajax', name: 'ajax', component: Ajax},
+  {path: '*', name: 'notfound', component: NotFound}
 ].map(addPattern);
 
 const listeners = [];
@@ -38,8 +39,10 @@ const getRoute = (location): IRoute => {
 
 history.listen((location) => {
   const route = getRoute(location);
-  listeners.forEach(listener => listener(route));
+  listeners.forEach(listener => listener(route, location.pathname));
 })
+
+export const getActivePath = () => history.location.pathname;
 
 export const getCurrentRoute = () => getRoute(history.location);
 
