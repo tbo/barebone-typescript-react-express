@@ -9,4 +9,5 @@ if (process.env.NODE_ENV === 'development')  {
 }
 
 app.use('/', express.static('public'));
+app.use('*', express.static('public/index.html'));
 app.listen(3000);
