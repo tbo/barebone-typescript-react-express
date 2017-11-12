@@ -7,7 +7,9 @@
         "jsx": "react",
         "allowJs": true
     },
-    "files": [
-      "server/index.ts"
+    "include": [
+      "server/**/*.ts",
+      "client/**/*.tsx",
+      "client/**/*.ts"
     ]
 }

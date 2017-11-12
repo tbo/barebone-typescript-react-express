@@ -24,9 +24,9 @@ class Ajax extends React.Component<{}, IAjaxState> {
       <td>{person.height}</td>
       <td>{person.mass}</td>
     </tr>
-  );
+  )
 
-  render() {
+  public render() {
     return (
       <Table striped bordered condensed hover>
         <thead>

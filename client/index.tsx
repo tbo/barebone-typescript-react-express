@@ -4,7 +4,6 @@ import Header from './components/header';
 import Navigation from './components/navigation';
 import {listen, getCurrentRoute, getActivePath, IRoute} from './router';
 
-
 interface IAppState {
   route: IRoute;
   activePath: string;
@@ -24,7 +23,7 @@ class App extends React.Component<{}, IAppState> {
     this.setState({route, activePath});
   }
 
-  render() {
+  public render() {
     const {route} = this.state;
     return (
       <div style={{paddingLeft: 20, paddingRight: 20}}>

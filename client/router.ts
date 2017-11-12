@@ -1,4 +1,4 @@
-import createHistory from 'history/createBrowserHistory'
+import createHistory from 'history/createBrowserHistory';
 import Homepage from './pages/home';
 import Echo from './pages/echo';
 import Ajax from './pages/ajax';
@@ -40,7 +40,7 @@ const getRoute = (location): IRoute => {
 history.listen((location) => {
   const route = getRoute(location);
   listeners.forEach(listener => listener(route, location.pathname));
-})
+});
 
 export const getActivePath = () => history.location.pathname;
 
