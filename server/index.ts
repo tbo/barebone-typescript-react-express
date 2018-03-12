@@ -11,3 +11,4 @@ if (process.env.NODE_ENV === 'development')  {
 app.use('/', express.static('public'));
 app.use('*', express.static('public/index.html'));
 app.listen(3000);
+console.info('Listening on Port http://localhost:3000');

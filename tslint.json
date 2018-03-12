@@ -10,6 +10,7 @@
     "object-literal-sort-keys": false
   },
   "rules": {
+    "no-console": false,
     "ordered-imports": false,
     "trailing-comma": false,
     "quotemark": [true, "single"],
